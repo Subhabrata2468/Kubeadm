@@ -39,9 +39,6 @@ Turn off the swap
 ```bash
 sudo swapoff -a
 ```
-```bash
-sudo systemctl start docker
-```
 
 #### Step 3
 Enable and start Docker
@@ -125,6 +122,15 @@ Check Control Plane Components
 kubectl get componentstatuses
 ```
 **_Verify that the control plane components (etcd, scheduler, controller-manager) are in the Healthy state._**
+
+### INCASE OF ANY FAILURE
+
+#### Step 10
+Clean up node configuration
+```bash
+kubeadm reset
+```
+**_This will attempt to revert changes made by kubeadm init or kubeadm join on the node, removing Kubernetes configuration and certificates_**
 
 
 
