@@ -9,21 +9,6 @@ Installing Kubeam on Debian involves setting up Kubernetes and then deploying Ku
     -  Disable swap
 
 
-
-
-# Kubeam Installation on Debian (MASTER NODE)
-
-Installing Kubeam on Debian involves setting up Kubernetes and then deploying Kubeam. 
-
-* Prerequisites
-    -  2 CPUS
-    -  2 Gb RAM
-    -  Network Connectivity
-    -  Disable swap
-
-
-
-
 #### Step 1 
 Install Docker
 
