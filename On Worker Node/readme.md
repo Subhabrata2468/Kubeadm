@@ -64,7 +64,7 @@ kubeadm join 10.9.0.70:6443 --token drjha1.c34h63hpq6dya971 \
 For verifying that both the master and worker nodes are working fine
 ```bash
 kubectl get nodes
-```bash
+```
 
 
 ## Author
