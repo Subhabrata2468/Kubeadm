@@ -83,6 +83,7 @@ kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
 #### Step 9 (Applies to only workers node)
 **Then you can join any number of worker nodes by running the following on each as root:**
+</br>
 **NOTE- THE CODE THAT IS AVAILABLE BELOW MAY DIFFER FORM SERVER TO SERVER SO YOU HAVE TO CHANGE ACCORDINGLY BUT MUST BE DONE ONLY  ONCE**
 ```bash
 kubeadm join 10.9.0.70:6443 --token drjha1.c34h63hpq6dya971 \
