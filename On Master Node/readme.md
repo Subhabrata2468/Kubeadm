@@ -26,13 +26,16 @@ sudo swapoff -a
 ```
 
 #### Step 3
-Enable and start Docker
+Enable ,start and to see status of Docker
 
 ```bash
 sudo systemctl enable docker
 ```
 ```bash
 sudo systemctl start docker
+```
+```bash
+sudo systemctl status docker
 ```
 
 #### Step 4
@@ -80,6 +83,7 @@ kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
 #### Step 9 (Applies to only workers node)
 **Then you can join any number of worker nodes by running the following on each as root:**
+**NOTE- THE CODE THAT IS AVAILABLE BELOW MAY DIFFER FORM SERVER TO SERVER SO YOU HAVE TO CHANGE ACCORDINGLY BUT MUST BE DONE ONLY  ONCE**
 ```bash
 kubeadm join 10.9.0.70:6443 --token drjha1.c34h63hpq6dya971 \
         --discovery-token-ca-cert-hash sha256:cfaf9590515c3c6bc023b1df20d476ce7d70695d768c786d77a79100c1b56da8 
