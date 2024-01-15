@@ -84,12 +84,12 @@ kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 #### Step 9 (Applies to only workers node)
 **Then you can join any number of worker nodes by running the following on each as root:**
 </br>
-**NOTE- THE CODE THAT IS AVAILABLE BELOW MAY DIFFER FORM SERVER TO SERVER SO YOU HAVE TO CHANGE ACCORDINGLY BUT MUST BE DONE ONLY  ONCE**
+**NOTE -_Token may differ you have to chand it according to that_**
 ```bash
 kubeadm join 10.9.0.70:6443 --token drjha1.c34h63hpq6dya971 \
         --discovery-token-ca-cert-hash sha256:cfaf9590515c3c6bc023b1df20d476ce7d70695d768c786d77a79100c1b56da8 
 ```
-**_Token may differ_**
+
 ### TO VERIFY IF NODES, PODS ARE WORKING OR NOT
 
 #### Step 10
