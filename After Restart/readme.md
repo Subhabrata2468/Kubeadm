@@ -1,4 +1,4 @@
-# Kubeam Installation on Debian (BOTH MASTER NODE & WORKER NODE)
+# Kubeadm Installation on Debian (BOTH MASTER NODE & WORKER NODE)
 
 Installing Kubeadm on Debian involves setting up Kubernetes and then deploying Kubeam. 
 
