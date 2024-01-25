@@ -1,6 +1,6 @@
-# Kubeam Installation on Debian (WORKER NODE)
+# Kubeadm Installation on Debian (WORKER NODE)
 
-Installing Kubeam on Debian involves setting up Kubernetes and then deploying Kubeam. 
+Installing Kubeadm on Debian involves setting up Kubernetes and then deploying Kubeam. 
 
 * Prerequisites
     -  1 or 2 CPUS
