@@ -1,6 +1,6 @@
 # Kubeadm Installation on Debian (MASTER NODE)
 
-Installing Kubeam on Debian involves setting up Kubernetes and then deploying Kubeam. 
+Installing Kubeadm on Debian involves setting up Kubernetes and then deploying Kubeam. 
 
 * Prerequisites
     -  2 CPUS
