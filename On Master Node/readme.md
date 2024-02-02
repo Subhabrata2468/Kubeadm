@@ -18,18 +18,9 @@ sudo apt-get update
 ```bash
 sudo apt-get install -y docker.io
 ```
+
+
 #### Step 2
-Turn off the swap
-
-```bash
-sudo swapoff -a
-```
-To turn off swap permanently
-```bash
-sudo sed -i '/ swap / s/^/#/' /etc/fstab
-```
-
-#### Step 3
 Enable ,start and to see status of Docker
 
 ```bash
@@ -42,26 +33,48 @@ sudo systemctl start docker
 sudo systemctl status docker
 ```
 
-#### Step 4
-Install Kubernetes
+#### Step 3
+Installing apt-transport-https
 
 ```bash
 sudo apt-get update && sudo apt-get install -y apt-transport-https
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
+
+Download the Kubernetes GPG key
+```bash
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /usr/share/keyrings/kubernetes-archive-keyring.gpg
+```
+
+Add the Kubernetes repository using signed-by option
+```bash
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
+
+Update the package list
 ```bash
 sudo apt-get update
 ```
+
+Installing kubeadm,kubelet,kubectl
 ```bash
 sudo apt-get install -y kubelet kubeadm kubectl
 ```
 
-#### Step 5
+#### Step 4
 Pull kubeadm images from docker
 
 ```bash
 kubeadm config images pull
+```
+#### Step 5
+Turn off the swap
+```bash
+sudo swapoff -a
+```
+
+To turn off swap permanently
+```bash
+sudo sed -i '/ swap / s/^/#/' /etc/fstab
 ```
 
 #### Step 6 
