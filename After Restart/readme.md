@@ -16,6 +16,12 @@ Turn off the swap
 sudo swapoff -a
 ```
 
+To turn off swap permanently
+```bash
+sudo sed -i '/ swap / s/^/#/' /etc/fstab
+```
+
+
 #### Step 2
 ...
 
