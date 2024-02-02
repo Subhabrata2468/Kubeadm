@@ -24,6 +24,10 @@ Turn off the swap
 ```bash
 sudo swapoff -a
 ```
+To turn off swap permanently
+```bash
+sudo sed -i '/ swap / s/^/#/' /etc/fstab
+```
 
 #### Step 3
 Enable ,start and to see status of Docker
