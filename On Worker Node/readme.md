@@ -55,8 +55,9 @@ sudo apt-get update
 ```
 
 Installing kubeadm,kubelet,kubectl
+Can change the version according to your requirements 
 ```bash
-sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-get install -y kubelet=1.23.0-00 kubeadm=1.23.0-00 kubectl=1.23.0-00
 ```
 
 #### Step 4
