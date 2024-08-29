@@ -76,19 +76,25 @@ sudo systemctl start kubelet
 ### On Master node
 - <i> Create a shell script 2.sh and paste the below code and run it </i>
 ```bash
-sudo kubeadm config images pull
+#!/bin/bash
 
-sudo kubeadm init
+# Pull required images for kubeadm
+sudo kubeadm config images pull --cri-socket /var/run/containerd/containerd.sock
 
+# Initialize the Kubernetes control-plane node
+sudo kubeadm init --cri-socket /var/run/containerd/containerd.sock
+
+# Set up kubeconfig for the regular user
 mkdir -p "$HOME"/.kube
 sudo cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
 sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
 
+# Apply the Calico network plugin
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml --validate=false
 
-# Network Plugin = calico
-kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
+# Print the command to join worker nodes to the cluster
+sudo kubeadm token create --print-join-command
 
-kubeadm token create --print-join-command
 ```
 
 ### On Worker node
